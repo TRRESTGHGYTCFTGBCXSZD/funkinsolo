@@ -1847,7 +1847,7 @@ class PlayState extends MusicBeatState
 					babyArrow.setGraphicSize(Std.int(babyArrow.width * Note.noteScale));
 
 					var nSuf:Array<String> = ['LEFT', 'UL', 'DOWN', 'UP', 'UR', 'RIGHT'];
-					var pPre:Array<String> = ['left', 'upleft', 'down', 'up', 'upright' 'right'];
+					var pPre:Array<String> = ['left', 'upleft', 'down', 'up', 'upright', 'right'];
 					babyArrow.x += Note.swagWidth * i;
 					babyArrow.animation.addByPrefix('static', 'arrow' + nSuf[i]);
 					babyArrow.animation.addByPrefix('pressed', pPre[i] + ' press', 24, false);
