@@ -125,7 +125,7 @@ class ChartingState extends MusicBeatState
 				player1: 'bf',
 				player2: 'dad',
 				speed: 1,
-				mania: 0,
+				mania: 1,
 				validScore: false
 			};
 		}
@@ -196,7 +196,7 @@ class ChartingState extends MusicBeatState
 		m_check.checked = (_song.mania == 1);
 		m_check.callback = function()
 		{
-			_song.mania = 0;
+			_song.mania = 1;
 			if (m_check.checked)
 			{
 				_song.mania = 1;
@@ -208,10 +208,10 @@ class ChartingState extends MusicBeatState
 		m_check2.checked = (_song.mania == 2);
 		m_check2.callback = function()
 		{
-			_song.mania = 0;
+			_song.mania = 1;
 			if (m_check2.checked)
 			{
-				_song.mania = 2;
+				_song.mania = 1;
 			}
 			trace('vos sos puto otra vez no weí');
 		};

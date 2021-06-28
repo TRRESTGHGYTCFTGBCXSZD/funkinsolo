@@ -1846,18 +1846,8 @@ class PlayState extends MusicBeatState
 					babyArrow.antialiasing = true;
 					babyArrow.setGraphicSize(Std.int(babyArrow.width * Note.noteScale));
 
-					var nSuf:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
-					var pPre:Array<String> = ['left', 'down', 'up', 'right'];
-					switch (mania)
-					{
-						case 1:
-							nSuf = ['LEFT', 'UP', 'RIGHT', 'LEFT', 'DOWN', 'RIGHT'];
-							pPre = ['left', 'up', 'right', 'yel', 'down', 'dark'];
-						case 2:
-							nSuf = ['LEFT', 'DOWN', 'UP', 'RIGHT', 'SPACE', 'LEFT', 'DOWN', 'UP', 'RIGHT'];
-							pPre = ['left', 'down', 'up', 'right', 'white', 'yel', 'violet', 'black', 'dark'];
-							babyArrow.x -= Note.tooMuch;
-					}
+					var nSuf:Array<String> = ['LEFT', 'UL', 'DOWN', 'UP', 'UR', 'RIGHT'];
+					var pPre:Array<String> = ['left', 'upleft', 'down', 'up', 'upright' 'right'];
 					babyArrow.x += Note.swagWidth * i;
 					babyArrow.animation.addByPrefix('static', 'arrow' + nSuf[i]);
 					babyArrow.animation.addByPrefix('pressed', pPre[i] + ' press', 24, false);
@@ -2480,62 +2470,23 @@ class PlayState extends MusicBeatState
 								altAnim = '-alt';
 						}
 						
-						if (mania == 0)
-						{
+						
 							switch (Math.abs(daNote.noteData))
 							{
-								case 2:
-									dad.playAnim('singUP' + altAnim, true);
-								case 3:
-									dad.playAnim('singRIGHT' + altAnim, true);
+								case 0:
+									dad.playAnim('singLEFT' + altAnim, true);
 								case 1:
 									dad.playAnim('singDOWN' + altAnim, true);
-								case 0:
-									dad.playAnim('singLEFT' + altAnim, true);
-							}
-						}
-						else if (mania == 1)
-						{
-							switch (Math.abs(daNote.noteData))
-							{
-								case 1:
-									dad.playAnim('singUP' + altAnim, true);
-								case 0:
-									dad.playAnim('singLEFT' + altAnim, true);
 								case 2:
-									dad.playAnim('singRIGHT' + altAnim, true);
+									dad.playAnim('singDOWN' + altAnim, true);
 								case 3:
-									dad.playAnim('singLEFT' + altAnim, true);
+									dad.playAnim('singUP' + altAnim, true);
 								case 4:
 									dad.playAnim('singDOWN' + altAnim, true);
 								case 5:
 									dad.playAnim('singRIGHT' + altAnim, true);
 							}
-						}
-						else
-						{
-							switch (Math.abs(daNote.noteData))
-							{
-								case 0:
-									dad.playAnim('singLEFT' + altAnim, true);
-								case 1:
-									dad.playAnim('singDOWN' + altAnim, true);
-								case 2:
-									dad.playAnim('singUP' + altAnim, true);
-								case 3:
-									dad.playAnim('singRIGHT' + altAnim, true);
-								case 4:
-									dad.playAnim('singUP' + altAnim, true);
-								case 5:
-									dad.playAnim('singLEFT' + altAnim, true);
-								case 6:
-									dad.playAnim('singDOWN' + altAnim, true);
-								case 7:
-									dad.playAnim('singUP' + altAnim, true);
-								case 8:
-									dad.playAnim('singRIGHT' + altAnim, true);
-							}
-						}
+						
 	
 						dad.holdTimer = 0;
 	
@@ -3531,18 +3482,12 @@ class PlayState extends MusicBeatState
 				case 1:
 					boyfriend.playAnim('singDOWNmiss', true);
 				case 2:
-					boyfriend.playAnim('singUPmiss', true);
+					boyfriend.playAnim('singDOWNmiss', true);
 				case 3:
-					boyfriend.playAnim('singRIGHTmiss', true);
+					boyfriend.playAnim('singUPmiss', true);
 				case 4:
 					boyfriend.playAnim('singDOWNmiss', true);
 				case 5:
-					boyfriend.playAnim('singRIGHTmiss', true);
-				case 6:
-					boyfriend.playAnim('singDOWNmiss', true);
-				case 7:
-					boyfriend.playAnim('singUPmiss', true);
-				case 8:
 					boyfriend.playAnim('singRIGHTmiss', true);
 			}
 
