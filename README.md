@@ -1,3 +1,4 @@
-# The shaggy mod source code
+# PROJECT FUNKINSOLO
 
-This is the repository for Friday Night Funkin' VS Shaggy mod.
+
+Friday NIght Funkin 6 Panel Solo is Here!
